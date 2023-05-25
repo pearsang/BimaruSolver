@@ -11,14 +11,9 @@ import TopBar from './components/TopBar.vue';
 <style>
 #app {
   text-align: center;
-  display: flex;
-  flex-direction: column;
 }
 
 body {
-  background-color: rgb(228, 249, 245)
+  background-color: rgb(228, 249, 245);
 }
-
-
-
 </style>
