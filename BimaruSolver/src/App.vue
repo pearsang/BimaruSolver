@@ -1,11 +1,17 @@
 <template>
-  <TopBar />
-  <Board /> 
+  <v-app>
+
+    <TopBar />
+    <Board /> 
+    <FooterBar />
+
+  </v-app>
 </template>
 
 <script setup lang="ts">
 import Board from './components/Board.vue';
 import TopBar from './components/TopBar.vue';
+import FooterBar from './components/FooterBar.vue';
 </script>
 
 <style>

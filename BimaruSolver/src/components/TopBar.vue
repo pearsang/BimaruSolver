@@ -1,9 +1,8 @@
 <template>
     <v-card
-      class="mx-auto"
+      class="mx-auto mb-16"
       max-width="448"
     >
-      <v-layout>
         <v-app-bar
           color="rgb(48, 227, 202)"
           class="mx-auto"
@@ -16,20 +15,9 @@
         >
             BimaruSolver
         </v-app-bar-title>
-          
-
-  
-        
-        
-        <v-img
-              src="https://picsum.photos/350/165?random"
-              class="mr-0 pr-0 image-left"
-            ></v-img>
-
         </v-app-bar>
   
     
-      </v-layout>
     </v-card>
 </template>
 
