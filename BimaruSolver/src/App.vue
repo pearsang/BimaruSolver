@@ -1,9 +1,11 @@
 <template>
+  <TopBar />
   <Board /> 
 </template>
 
 <script setup lang="ts">
 import Board from './components/Board.vue';
+import TopBar from './components/TopBar.vue';
 </script>
 
 <style>
