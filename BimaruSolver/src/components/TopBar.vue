@@ -10,7 +10,15 @@
       >
         BimaruSolver
       </v-app-bar-title>
-
+      <a href="https://en.wikipedia.org/wiki/Battleship_(puzzle)" class="mx-2">
+        <v-btn
+        icon
+        width="100px"
+        class="d-flex justify-center"
+        style="font-size: 15px; color: white"
+      >Rules</v-btn>
+      </a>
+      
       <v-sheet class="d-flex justify-end" color="grey-darken-4">
         <v-img height="90" width="150" :src="imageSrc"></v-img>
       </v-sheet>

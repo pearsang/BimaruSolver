@@ -7,7 +7,9 @@
       color="grey-darken-4"
       elevation="0"
     >
-      <a href="" class="mx-2"> <v-icon icon="mdi-github"></v-icon> Pearsang</a>
+      <a href="https://github.com/pearsang" class="mx-2"> 
+        <v-icon icon="mdi-github"></v-icon> Pearsang
+      </a>
       | Made by José Pereira and Simão Sanguinho | &copy; 2023
     </v-card>
   </v-footer>
