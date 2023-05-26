@@ -1,4 +1,4 @@
-<template>
+<template>z
   <v-card class="mx-auto mb-16" max-width="448">
     <v-app-bar color="grey-darken-4" elevation="3">
       <v-app-bar-title
@@ -10,6 +10,9 @@
       >
         BimaruSolver
       </v-app-bar-title>
+      <v-sheet class="d-flex justify-end" color="grey-darken-4">
+        <v-img height="90" width="150" :src="imageSrc"></v-img>
+      </v-sheet>
       <a href="https://en.wikipedia.org/wiki/Battleship_(puzzle)" class="mx-2">
         <v-btn
         icon
@@ -19,9 +22,6 @@
       >Rules</v-btn>
       </a>
       
-      <v-sheet class="d-flex justify-end" color="grey-darken-4">
-        <v-img height="90" width="150" :src="imageSrc"></v-img>
-      </v-sheet>
     </v-app-bar>
   </v-card>
 </template>
