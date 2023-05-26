@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
 
     <TopBar />
     <Board /> 
@@ -17,9 +17,11 @@ import FooterBar from './components/FooterBar.vue';
 <style>
 #app {
   text-align: center;
+  background-color: rgb(198, 233, 225);
 }
 
-body {
-  background-color: rgb(228, 249, 245);
-}
+ a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
 </style>

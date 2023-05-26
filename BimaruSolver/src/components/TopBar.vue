@@ -4,7 +4,7 @@
       max-width="448"
     >
         <v-app-bar
-          color="rgb(48, 227, 202)"
+          color="grey-darken-4"
           class="mx-auto"
           elevation="0"
         >

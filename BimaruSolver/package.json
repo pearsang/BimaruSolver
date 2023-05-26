@@ -8,10 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "material-design-icons-iconfont": "^6.7.0",
     "vue": "^3.3.2",
     "vuetify": "^3.3.1"
   },
   "devDependencies": {
+    "@mdi/font": "^7.2.96",
     "@vitejs/plugin-vue": "^4.2.3",
     "vite": "^4.3.5"
   }
