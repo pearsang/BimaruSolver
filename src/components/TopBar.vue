@@ -1,27 +1,31 @@
-<template>z
-  <v-card class="mx-auto mb-16" max-width="448">
-    <v-app-bar color="grey-darken-4" elevation="3">
-      <v-app-bar-title
-        class="d-flex justify-star"
-        style="
-          font-family: 'Roboto Mono', monospace;
-          font-size: 30px;
-        "
-      >
-        BimaruSolver
-      </v-app-bar-title>
-      <v-sheet class="d-flex justify-end" color="grey-darken-4">
-        <v-img height="90" width="150" :src="imageSrc"></v-img>
+<template>
+  z
+  <v-card class="mb-16" max-width="448">
+    <v-app-bar color="grey-darken-4" elevation="3" class="d-flex mb-6">
+      <v-sheet color="grey-darken-4" class="ml-2 pl-2 mr-0 pr-0">
+        <v-app-bar-title
+          class=""
+          style="font-family: 'Roboto Mono', monospace; font-size: 30px"
+        >
+          BimaruSolver
+        </v-app-bar-title>
       </v-sheet>
-      <a href="https://en.wikipedia.org/wiki/Battleship_(puzzle)" class="mx-2">
-        <v-btn
-        icon
-        width="100px"
-        class="d-flex justify-center"
-        style="font-size: 15px; color: white"
-      >Rules</v-btn>
-      </a>
-      
+
+      <v-sheet class="mb-2 ml-2 me-auto" color="grey-darken-4">
+        <v-img height="90" width="90" :src="imageSrc" cover></v-img>
+      </v-sheet>
+
+      <v-sheet class="ma-2 pa-2" color="grey-darken-4">
+        <a href="https://en.wikipedia.org/wiki/Battleship_(puzzle)">
+          <v-btn
+            icon
+            width="100px"
+            class=""
+            style="font-size: 15px; color: white"
+            >Rules</v-btn
+          >
+        </a>
+      </v-sheet>
     </v-app-bar>
   </v-card>
 </template>
