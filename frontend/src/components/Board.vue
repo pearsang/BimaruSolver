@@ -20,7 +20,7 @@
                   ? col
                   : col === 11 && row !== 11
                   ? row
-                  : ""
+                  : board[row - 1][col - 1]
               }}
             </v-card-text>
           </v-card>
@@ -42,16 +42,41 @@
 </template>
 
 <script setup>
-import axios from 'axios';
+import axios from "axios";
+import { computed } from "vue";
+import { ref } from "vue";
 
-const API_URL = 'http://127.0.0.1:5000/';
+const API_URL = "http://127.0.0.1:5000/";
+const board = ref(
+  [[" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']]
+);
 
 const solve = async () => {
   const response = await axios.get(API_URL);
   console.log(response.data);
+
+  const n_steps = response.data.length;
+  for (let i = 0; i < n_steps; i++) { // numero de steps
+    let count = 0;
+    for (let j = 0; j < 10; j++) { // numero de posicoes
+      for (let k = 0; k < 10; k++) {
+        board.value[j][k] = response.data[i][count++];
+      }
+    }
+    await new Promise(r => setTimeout(r, 500));
+  }
 };
-
-
+solve();
 
 </script>
 
