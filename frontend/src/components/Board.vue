@@ -35,6 +35,7 @@
         color="blue-grey-darken-4"
         style="font-family: 'Roboto Mono', monospace; border-radius: 5px"
         width="120px"
+        @click="solve"
         >Solve</v-btn
       >
     </v-col>
@@ -76,7 +77,6 @@ const solve = async () => {
     await new Promise(r => setTimeout(r, 500));
   }
 };
-solve();
 
 </script>
 
