@@ -48,8 +48,7 @@ import { computed } from "vue";
 import { ref } from "vue";
 
 const API_URL = "http://127.0.0.1:5000/";
-const board = ref(
-  [[" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+const board = ref([
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -59,25 +58,46 @@ const board = ref(
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']]
-);
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+]);
 
 const solve = async () => {
   const response = await axios.get(API_URL);
   console.log(response.data);
 
   const n_steps = response.data.length;
-  for (let i = 0; i < n_steps; i++) { // numero de steps
+  for (let i = 0; i < n_steps; i++) {
+    // numero de steps
     let count = 0;
-    for (let j = 0; j < 10; j++) { // numero de posicoes
+    for (let j = 0; j < 10; j++) {
+      // numero de posicoes
       for (let k = 0; k < 10; k++) {
-        board.value[j][k] = response.data[i][count++];
+        // text to emoji
+        const value = response.data[i][count++];
+        if (value === "." || value === " " || value === "W") {
+          board.value[j][k] = "﹌";
+        } else if (value === "C" || value === "c") {
+          board.value[j][k] = "●";
+        } else if (value === "R" || value === "r") {
+          board.value[j][k] = "►";
+        } else if (value === "L" || value === "l") {
+          board.value[j][k] = "◄";
+        } else if (value === "B" || value === "b") {
+          board.value[j][k] = "▼";
+        } else if (value === "T" || value === "t") {
+          board.value[j][k] = "▲";
+        } else if (value === "M" || value === "m") {
+          board.value[j][k] = "■";
+        }
+        else {
+          board.value[j][k] = " ";
+        }
       }
     }
-    await new Promise(r => setTimeout(r, 500));
+    await new Promise((r) => setTimeout(r, 200));
   }
 };
-
 </script>
 
 <style scoped></style>
