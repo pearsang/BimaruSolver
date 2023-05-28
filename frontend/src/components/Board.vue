@@ -41,6 +41,18 @@
   </v-container>
 </template>
 
-<script setup></script>
+<script setup>
+import axios from 'axios';
+
+const API_URL = 'http://127.0.0.1:5000/';
+
+const solve = async () => {
+  const response = await axios.get(API_URL);
+  console.log(response.data);
+};
+
+
+
+</script>
 
 <style scoped></style>

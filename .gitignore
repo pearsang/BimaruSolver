@@ -28,3 +28,5 @@ venv
 *.njsproj
 *.sln
 *.sw?
+
+backend/__pycache__/
