@@ -75,7 +75,7 @@ const solve = async () => {
       for (let k = 0; k < 10; k++) {
         // text to emoji
         const value = response.data[i][count++];
-        if (value === "." || value === " " || value === "W") {
+        if (value === "." || value === "W") {
           board.value[j][k] = "﹌";
         } else if (value === "C" || value === "c") {
           board.value[j][k] = "●";
