@@ -713,7 +713,11 @@ def get_steps():
     board = Board.parse_instance()
     problem = Bimaru(board)
     depth_first_tree_search(problem)
-    return problem.steps
+    return  problem.steps
+
+def get_limits():
+    board = Board.parse_instance()
+    return [board.limit_rows, board.limit_columns]
 
 if __name__ == "__main__":
     # Ler o ficheiro do standard input
