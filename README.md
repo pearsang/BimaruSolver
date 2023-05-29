@@ -1,21 +1,3 @@
-# BimaruSolver
-
-This template should help get you started developing with Vue 3 in Vite.
-
-### Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-![made-with-python](https://img.shields.io/badge/Made%20with-Python3-brightblue)
-![made-with-vue0](https://img.shields.io/badge/Made%20with-Vue-brightgreen)
 
 <!-- LOGO -->
 <br />
@@ -34,7 +16,10 @@ npm run dev
   <a href="#installation">Installation</a> •
   <a href="#examples">Examples</a> •
 </p>  
-                                                                                                                        
+
+![made-with-python](https://img.shields.io/badge/Made%20with-Python3-brightblue)
+![made-with-vue0](https://img.shields.io/badge/Made%20with-Vue-brightgreen)
+
                                                                                                                                                       
 ## About The Project
 Bimaru is a Flask+Vue App for solving Bimaru puzzles. Currently it has basic functionality, allowing the user to solve static puzzles that exist in the backend. Next steps on our plans are allowing for personalized input from the user.
