@@ -17,9 +17,9 @@
             <v-card-text class="px-0" style="font-size: 20px">
               {{
                 row === 11 && col !== 11
-                  ? col
+                  ? cols[col - 1]
                   : col === 11 && row !== 11
-                  ? row
+                  ? rows[row - 1]
                   : board[row - 1][col - 1]
               }}
             </v-card-text>
@@ -49,7 +49,7 @@ import { ref } from "vue";
 
 const API_URL = "http://127.0.0.1:5000/";
 const board = ref([
-  [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+  ["  ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -62,11 +62,19 @@ const board = ref([
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
 ]);
 
+const rows = ref([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+const cols = ref([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
 const solve = async () => {
   const response = await axios.get(API_URL);
-  console.log(response.data);
+  console.log(response.data[0][0]);
 
-  const n_steps = response.data.length;
+  for (let i = 0; i < 11; i++) {
+    rows.value[i] = response.data[0][0][i];
+    cols.value[i] = response.data[0][1][i];
+  }
+
+  const n_steps = response.data[1].length;
   for (let i = 0; i < n_steps; i++) {
     // numero de steps
     let count = 0;
@@ -74,7 +82,7 @@ const solve = async () => {
       // numero de posicoes
       for (let k = 0; k < 10; k++) {
         // text to emoji
-        const value = response.data[i][count++];
+        const value = response.data[1][i][count++];
         if (value === "." || value === "W") {
           board.value[j][k] = "﹌";
         } else if (value === "C" || value === "c") {
@@ -89,8 +97,7 @@ const solve = async () => {
           board.value[j][k] = "▲";
         } else if (value === "M" || value === "m") {
           board.value[j][k] = "■";
-        }
-        else {
+        } else {
           board.value[j][k] = " ";
         }
       }

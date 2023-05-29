@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 import sys 
 sys.path.insert(0, './algorithm/bimaru.py')
 from bimaru import get_steps
+from bimaru import get_limits
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -13,10 +14,12 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 def hello_world():
     info = []
     steps = get_steps()
+    limits = get_limits()
     for step in steps:
         step_list = []
         for i in range(10):
             for j in range(10):
                 step_list.append(step[i][j])
         info.append(step_list)
-    return jsonify(info)
+    return jsonify(limits, info)
+
