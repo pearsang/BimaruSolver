@@ -88,9 +88,9 @@ const solve = async () => {
         } else if (value === "C" || value === "c") {
           board.value[j][k] = "●";
         } else if (value === "R" || value === "r") {
-          board.value[j][k] = "►";
+          board.value[j][k] = "▶";
         } else if (value === "L" || value === "l") {
-          board.value[j][k] = "◄";
+          board.value[j][k] = "◀";
         } else if (value === "B" || value === "b") {
           board.value[j][k] = "▼";
         } else if (value === "T" || value === "t") {
