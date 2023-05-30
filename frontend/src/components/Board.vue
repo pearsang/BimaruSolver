@@ -102,7 +102,7 @@ const solve = async () => {
         }
       }
     }
-    await new Promise((r) => setTimeout(r, 200));
+    await new Promise((r) => setTimeout(r, 20));
   }
 };
 </script>
