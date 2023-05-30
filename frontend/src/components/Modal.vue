@@ -9,7 +9,7 @@
             color="primary"
             v-bind="props"
           >
-            Open Dialog
+            Input
           </v-btn>
         </template>
   
