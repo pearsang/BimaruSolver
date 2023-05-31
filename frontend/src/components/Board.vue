@@ -1,3 +1,4 @@
+
 <template>
   <v-card class="elevation-6 mx-auto mt-16">
     <v-container>
@@ -102,9 +103,11 @@ const solve = async () => {
         }
       }
     }
-    await new Promise((r) => setTimeout(r, 200));
+    await new Promise((r) => setTimeout(r, 20));
   }
 };
+
+
 </script>
 
 <style scoped></style>
