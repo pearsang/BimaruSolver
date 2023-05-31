@@ -553,7 +553,7 @@ class Board:
         columns = []
         hints = []
         
-        with open('instance10.txt', 'r') as f:
+        with open('input.txt', 'r') as f:
             for line in f:
                 instance = line.split()
                 line = [int(x) if x.isdigit() else x for x in instance]

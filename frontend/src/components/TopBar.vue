@@ -13,7 +13,9 @@
         <v-img height="90" width="90" :src="imageSrc" cover></v-img>
       </v-sheet>
 
-      <v-sheet>
+      <v-sheet
+      color="grey-darken-4"
+      >
           <Modal />
       </v-sheet>
       <v-sheet class="ma-2 pa-2" color="grey-darken-4">
@@ -22,7 +24,7 @@
           <v-btn
             icon
             width="100px"
-            style="font-size: 15px; color: white"
+            style="font-family: 'Roboto Mono', monospace; font-size: 20px"
             >Rules</v-btn
           >
         </a>
