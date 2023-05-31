@@ -13,14 +13,11 @@
         <v-img height="90" width="90" :src="imageSrc" cover></v-img>
       </v-sheet>
 
+      <v-sheet>
+          <Modal />
+      </v-sheet>
       <v-sheet class="ma-2 pa-2" color="grey-darken-4">
-      
-        <v-btn
-          icon
-          width="100px"
-          style="font-size: 15px; color: white"
-          >Input</v-btn>
-
+        
           <a href="https://en.wikipedia.org/wiki/Battleship_(puzzle)">
           <v-btn
             icon
@@ -39,6 +36,8 @@
 
 <script setup>
 import { computed } from "vue";
+import Modal from './Modal.vue';
+
 const imageSrc = computed(() => {
   return new URL("../assets/logo.png", import.meta.url).href;
 });

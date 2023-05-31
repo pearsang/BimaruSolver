@@ -3,7 +3,6 @@
 
     <TopBar />
     <Board /> 
-    <Modal />
     <FooterBar />
 
   </v-app>
@@ -13,7 +12,7 @@
 import Board from './components/Board.vue';
 import TopBar from './components/TopBar.vue';
 import FooterBar from './components/FooterBar.vue';
-import Modal from './components/Modal.vue';
+
 </script>
 
 <style>
