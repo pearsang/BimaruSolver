@@ -1,26 +1,47 @@
 <template>
-    <div class="text-center">
+        <v-col cols="auto">
       <v-dialog
-        v-model="dialog"
+        transition=""
         width="auto"
       >
         <template v-slot:activator="{ props }">
           <v-btn
             color="primary"
             v-bind="props"
-          >
-            Input
-          </v-btn>
+          >From the top</v-btn>
         </template>
-  
-        <v-card>
-          <v-card-text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </v-card-text>
-          <v-card-actions>
-            <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>
-          </v-card-actions>
-        </v-card>
+        <template v-slot:default="{ isActive }">
+          <v-card>
+            <v-toolbar
+              color="primary"
+              title="Opening from the top"
+            ></v-toolbar>
+            <v-card>
+                <v-text-field
+                    width="100%"
+                    max-height="500%"
+                  label="Legal middle name"
+                  hint="example of helper text only on focus"
+                ></v-text-field>
+            </v-card>
+            <v-card-actions class="justify-end">
+              <v-btn
+                variant="text"
+                @click="isActive.value = false"
+              >Close</v-btn>
+            </v-card-actions>
+          </v-card>
+        </template>
       </v-dialog>
-    </div>
-  </template>
+    </v-col>
+
+</template>
+
+
+<script setup>
+const openModal = async () => {
+
+    isActive.value = true;
+};
+
+</script>
